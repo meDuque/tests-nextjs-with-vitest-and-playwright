@@ -19,6 +19,14 @@
     95,
     120
   ],
+  // Explorer
+  "explorer.fileNesting.patterns": {
+    "package.json": ".eslint*, eslint.config*, prettier*, .prettier*, .editorconfig, tsconfig*, pnpm-*, bun.lockb, nest*, package-lock*, yarn*",
+    "vitest.config.ts": "vite*",
+    "tailwind.config.*": "tailwind.config*, postcss.config*",
+    ".env.local": ".env*",
+    ".env": ".env*"
+  },
   "files.eol": "\n",
   /** Extentions */
   "[prisma]": {},
