@@ -17,17 +17,20 @@ describe('makeValidatedTodo (unit)', () => {
     const sanitizeStrReturn = 'sanitizeStr return'
     sanitizeStrSpy.mockReturnValue(sanitizeStrReturn)
 
-    const result = makeValidatedTodo(description) as ValidTodo
+    makeValidatedTodo(description) as ValidTodo
 
     expect(validateTodoDescriptionSpy).toHaveBeenCalledExactlyOnceWith(sanitizeStrReturn)
-    expect(result.success).toBe(true)
+  })
 
+  it('should calls makeNewTodo if validatedTodoDescription return success', () => {
+    const { description } = makeMocks()
+    const result = makeValidatedTodo(description) as ValidTodo
+
+    expect(result.success).toBe(true)
     expect(result.data.id).toBe('any-id')
     expect(result.data.description).toBe('lorem ipsum')
     expect(result.data.createdAt).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/)
   })
-
-  // it('should calls makeNewTodo if validatedTodoDescription return success', () => {})
 
   // it('should return validatedTodoDescription.errors if validation fails', () => {})
 })
