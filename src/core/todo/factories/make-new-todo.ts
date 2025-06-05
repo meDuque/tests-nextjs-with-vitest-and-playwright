@@ -1,10 +1,6 @@
-interface makeTodoProps {
-  id: string
-  description: string
-  createdAt: string
-}
+import type { Todo } from '../schemas/todo.contract'
 
-export function makeNewTodo(description: string): makeTodoProps {
+export function makeNewTodo(description: string): Todo {
   return {
     id: crypto.randomUUID(),
     description,
