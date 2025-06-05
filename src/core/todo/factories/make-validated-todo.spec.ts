@@ -5,7 +5,7 @@ describe('makeValidatedTodo (unit)', () => {
   it('should calls sanitizeStr function with correct value', () => {
     // Arrange
     const description = 'lorem ipsum'
-    const sanitizeStrSpy = vi.spyOn(sanitizeStrMod, 'sanitizeStr')
+    const sanitizeStrSpy = vi.spyOn(sanitizeStrMod, 'sanitizeStr').mockReturnValue(description)
 
     // Act
     makeValidatedTodo(description)
