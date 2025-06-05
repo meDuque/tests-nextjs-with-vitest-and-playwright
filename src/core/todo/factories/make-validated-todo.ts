@@ -3,12 +3,12 @@ import { validateTodoDescription } from '../schemas/validate-todo-description'
 import { makeNewTodo } from './make-new-todo'
 import { Todo } from '../schemas/todo.contract'
 
-interface InvalidTodo {
+export interface InvalidTodo {
   success: false
   errors: string[]
 }
 
-interface ValidTodo {
+export interface ValidTodo {
   success: true
   data: Todo
 }
