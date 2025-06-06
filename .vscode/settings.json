@@ -40,6 +40,9 @@
       ]
     ]
   },
+  "code-runner.executorMap": {
+    "typescript": "npx dotenv -e .env.development -- tsx"
+  },
   "cSpell.customDictionaries": {
     "project-words": {
       "name": "project-words",
